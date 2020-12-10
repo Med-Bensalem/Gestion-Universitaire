@@ -9,6 +9,13 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form class="form-inline my-2 my-lg-0" asp-action="Search" asp-controller="Student">
+    <input class="form-control mr-sm-2" placeholder="tapez un Nom" type="search" name="name" />
+    <select asp-items="ViewBag.SchoolID" name="schoolid" class="form-control"></select>
+    &nbsp;&nbsp; <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+</form><br />
+
 <table class="table">
     <thead>
         <tr>
@@ -40,7 +47,7 @@
                 @Html.DisplayFor(modelItem => item.BirthDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.School.SchoolID)
+                @Html.DisplayFor(modelItem => item.School.SchoolName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> |

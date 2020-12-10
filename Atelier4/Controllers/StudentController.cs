@@ -26,7 +26,7 @@ namespace Atelier4.Controllers
         // GET: StudentController
         public ActionResult Index()
         {
-            ViewBag.SchooID = new SelectList(schoolRepository.GetAll(), "SchoolID", "SchoolName");
+            ViewBag.SchoolID = new SelectList(schoolRepository.GetAll(), "SchoolID", "SchoolName");
             return View(studentRepository.GetAll());
 
         }
@@ -40,7 +40,6 @@ namespace Atelier4.Controllers
                 result = studentRepository.GetStudentsBySchoolID(schoolid);
             ViewBag.SchoolID = new SelectList(schoolRepository.GetAll(), "SchoolID", "SchoolName");
             return View("Index", result);
-
         }
 
         // GET: StudentController/Details/5

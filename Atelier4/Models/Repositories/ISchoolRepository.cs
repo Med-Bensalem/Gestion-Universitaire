@@ -9,7 +9,7 @@ namespace Atelier4.Models.Repositories
     {
         IList<School> GetAll();
         School GetById(int id);
-        void Add(School ss);
+        void Add(School s);
         void Edit(School s);
         void Delete(School s);
         double StudentAgeAverage(int schoolId);
